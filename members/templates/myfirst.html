@@ -1,0 +1,257 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Django Framework</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f4f4f4;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* Encabezado */
+    header {
+      background-color: #007a33;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      font-size: 24px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #c8e6c9;
+      color: #000;
+    }
+
+    /* Imagen principal */
+    .imagen-fondo {
+      display: block;
+      margin: 20px auto;
+      width: 80%;
+      max-width: 600px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    /* Secciones */
+    section {
+      padding: 40px 20px;
+      margin: 30px auto;
+      width: 85%;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    section:nth-child(odd) {
+      background-color: #e8f5e9;
+    }
+
+    section:nth-child(even) {
+      background-color: #d0f0c0;
+    }
+
+    section h2 {
+      text-align: center;
+      font-family: "Times New Roman", serif;
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+
+    section p, section ul {
+      text-align: justify;
+      font-size: 16px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    /* Tabla de ejemplos */
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 20px;
+      text-align: center;
+    }
+
+    th {
+      font-family: "Times New Roman", serif;
+      font-size: 20px;
+      color: #000;
+      padding: 10px;
+    }
+
+    td {
+      vertical-align: top;
+    }
+
+    td img {
+      width: 180px;
+      height: auto;
+      border: 3px solid #000;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    /* Pie de página */
+    footer {
+      text-align: center;
+      background-color: #004d00;
+      color: white;
+      padding: 15px 0;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+      .imagen-fondo {
+        width: 95%;
+      }
+      td img {
+        width: 100%;
+        max-width: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header>
+    <h1>Django Framework</h1>
+    <nav>
+      <ul>
+        <li><a href="#Que-es">¿Qué es Django?</a></li>
+        <li><a href="#Funciones">Funciones</a></li>
+        <li><a href="#Estructura">Estructura</a></li>
+        <li><a href="#Ventajas">Ventajas</a></li>
+        <li><a href="#Desventajas">Desventajas</a></li>
+        <li><a href="#Ejemplos">Ejemplos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Imagen principal -->
+  <img src="{% static 'members/fondo.jpg' %}" alt="fondo" class="imagen-fondo">
+
+  <!-- Sección Qué es Django -->
+  <section id="Que-es">
+    <h2>¿Qué es Django?</h2>
+    <p>
+      Django es un framework de desarrollo web de alto nivel que fomenta el desarrollo 
+      rápido y el diseño limpio y pragmático. Fue creado para facilitar la creación 
+      de aplicaciones web complejas y basadas en bases de datos.
+    </p>
+  </section>
+
+  <!-- Funciones -->
+  <section id="Funciones">
+    <h2>Funciones de Django</h2>
+    <ul>
+      <li>Gestión automática de bases de datos mediante ORM.</li>
+      <li>Autenticación y autorización de usuarios.</li>
+      <li>Panel de administración preconstruido.</li>
+      <li>Gestión de formularios y validación de datos.</li>
+      <li>Plantillas dinámicas con etiquetas y filtros.</li>
+    </ul>
+  </section>
+
+  <!-- Estructura -->
+  <section id="Estructura">
+    <h2>Estructura de Django</h2>
+    <p>
+      Django sigue una arquitectura Modelo-Vista-Template (MVT). La estructura básica de un proyecto Django incluye:
+    </p>
+    <ul>
+      <li><strong>Modelos:</strong> Definen la estructura de los datos.</li>
+      <li><strong>Vistas:</strong> Gestionan la lógica de la aplicación y las solicitudes HTTP.</li>
+      <li><strong>Templates:</strong> Plantillas HTML para la presentación de datos.</li>
+      <li><strong>URLs:</strong> Mapeo de rutas a vistas específicas.</li>
+    </ul>
+  </section>
+
+  <!-- Ventajas -->
+  <section id="Ventajas">
+    <h2>Ventajas</h2>
+    <ul>
+      <li>Desarrollo rápido gracias a su enfoque “baterías incluidas”.</li>
+      <li>Alta seguridad con protección contra ataques comunes.</li>
+      <li>Comunidad activa y amplia documentación.</li>
+      <li>Escalabilidad para proyectos pequeños y grandes.</li>
+      <li>Facilidad para integrar con otras tecnologías.</li>
+    </ul>
+  </section>
+
+  <!-- Desventajas -->
+  <section id="Desventajas">
+    <h2>Desventajas</h2>
+    <ul>
+      <li>Curva de aprendizaje inicial para principiantes.</li>
+      <li>Puede ser excesivo para proyectos muy simples.</li>
+      <li>Menor flexibilidad frente a microframeworks.</li>
+      <li>Actualizaciones frecuentes que pueden requerir ajustes.</li>
+      <li>Dependencia de Python, lo que puede limitar su uso en algunos entornos.</li>
+    </ul>
+  </section>
+
+  <!-- Ejemplos -->
+  <section id="Ejemplos">
+    <h2>Ejemplos de sitios web construidos con Django</h2>
+    <table>
+      <tr>
+        <td><strong>Instagram</strong><br><img src="{% static 'members/instagram.jpg' %}" alt="Instagram"></td>
+        <td><strong>Disqus</strong><br><img src="{% static 'members/Disqus.png' %}" alt="Disqus"></td>
+        <td><strong>Mozilla</strong><br><img src="{% static 'members/Mozilla.jpg' %}" alt="Mozilla"></td>
+      </tr>
+      <tr>
+        <td><strong>National Geographic</strong><br><img src="{% static 'members/national.png' %}" alt="National Geographic"></td>
+        <td><strong>Spotify</strong><br><img src="{% static 'members/spotify.png' %}" alt="Spotify"></td>
+        <td></td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>Por <strong>Zharith Bedoya</strong> &copy; 2025 — Todos los derechos reservados</p>
+  </footer>
+
+</body>
+</html>
